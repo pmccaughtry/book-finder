@@ -4,7 +4,7 @@
 This project utilizes FastAPI to perform book searches on behalf of clients. The search results are obtained from Google Books API.
 
 ## API Start-up
-To start the Book Finder API only, run `npm run fastapi-dev` from the project root directory (book-finder). This will install dependencies from requirements.txt and start the API in development mode.
+To start the Book Finder API *only*, run `npm run fastapi-dev` from the terminal in the project root directory (book-finder). This will install dependencies from requirements.txt and start the API in development mode.
 
 ## Testing
 To test the files in this application run the following commands from the terminal:
