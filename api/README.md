@@ -1,19 +1,15 @@
 # Book Finder API
 
 ## Overview
-This project utilizes FastAPI to perform books searches on behalf of clients. The book searches are obtained from Google Books API.
+This project utilizes FastAPI to perform book searches on behalf of clients. The search results are obtained from Google Books API.
 
-## Setup
-Run the setup.sh (Linux/MacOS) or setup.ps1 (Windows) script from the project_root/scripts directory:
-
-Linux example: `ilant-health-assessment/scripts/setup.sh`
-
-If you are only interested in building the API run `ilant-health-assessment/scripts/api_setup.sh`
+## API Start-up
+To start the Book Finder API only, run `npm run fastapi-dev` from the project root directory (book-finder). This will install dependencies from requirements.txt and start the API in development mode.
 
 ## Testing
 To test the files in this application run the following commands from the terminal:
 
-1. If not in the application server directory: `cd ilant-health-assessment/server`
+1. If not in the application server directory: `cd book-finder/api`
 2. Run tests: `pytest tests`
 
 ## API Endpoints
@@ -23,4 +19,4 @@ To test the files in this application run the following commands from the termin
 
 **/health-details** returns details about uptime, cpu, and virtual memory
 
-There is also a catch-all route to gracefully handle any non-existant routes, returning a 200 to mess with bots, bad actors, etc
+There is also a **catch-all** route to gracefully handle any non-existant routes, returning a 200 to mess with bots, bad actors, etc
