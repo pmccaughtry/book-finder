@@ -10,17 +10,17 @@ class SearchTerms(BaseModel):
 
 app = FastAPI()
 
-base_url = "https://www.googleapis.com/books/v1/"
+books_api_base_url = "https://www.googleapis.com/books/v1/"
 
 @app.post("/books", status_code=200)
 async def search_books(search_terms: SearchTerms):
     # Ensure search terms are URI encoded
     # Clients are expected to send encoded version of search terms: e.g., encodeURIComponent('search+terms')
-    if "+" in search_terms.terms:
+    if ("+" in search_terms.terms or " " in search_terms.terms):
         search_terms.terms = quote(search_terms.terms)
 
     # search by volumes
-    endpoint = base_url + 'volumes?q=' + search_terms.terms
+    endpoint = books_api_base_url + 'volumes?q=' + search_terms.terms
     response = requests.get(endpoint)
 
     if response.status_code == 200:
