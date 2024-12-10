@@ -3,6 +3,13 @@
 ## Overview
 This project utilizes FastAPI to perform book searches on behalf of clients. The search results are obtained from Google Books API.
 
+## Set-up
+1. From the project root directory (book-finder), [create a virtual environment](https://fastapi.tiangolo.com/virtual-environments/)
+2. Activate the virtual environment: `source ./venv/bin/activate`
+
+Note: If you receive an error creating a virtual environment you may need to install **venv**
+`pip3 install venv` and then repeat steps 1. and 2. above.
+
 ## API Start-up
 To start the Book Finder API *only*, run `npm run fastapi-dev` from the terminal in the project root directory (book-finder). This will install dependencies from requirements.txt and start the API in development mode.
 
