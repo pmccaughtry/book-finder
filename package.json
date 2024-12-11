@@ -21,9 +21,9 @@
         "dev": "concurrently \"npm run next-dev\" \"npm run fastapi-dev\"",
         "build": "next build",
         "fastapi-dev": "(cd api && pip3 install -r requirements.txt && fastapi dev main.py)",
+        "lint": "next lint",
         "next-dev": "next dev --turbopack",
-        "start": "next start",
-        "lint": "next lint"
+        "start": "next start"
     },
     "version": "0.1.0"
 }
