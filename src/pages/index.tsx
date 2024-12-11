@@ -45,7 +45,7 @@ const Home: React.FC = () => {
             e.persist && e.persist();
 
             const terms = encodeURIComponent(searchTerms.trim().replaceAll(' ', '+'));
-            const baseApiUrl = process.env.NEXT_PUBLIC_NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_PRODUCTION_API_URL : 'http://localhost:8000'
+            const baseApiUrl = process.env.NEXT_PUBLIC_NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_PRODUCTION_API_URL : process.env.NEXT_PUBLIC_DEVELOPMENT_API_URL
             const response = await fetch(`${baseApiUrl}/books`, fetchParams({terms}, 'POST'));
             const results = await response.json();
 
