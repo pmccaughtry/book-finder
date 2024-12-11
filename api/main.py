@@ -1,6 +1,7 @@
 import psutil
 import requests
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from urllib.parse import quote
 from datetime import datetime
@@ -9,6 +10,15 @@ class SearchTerms(BaseModel):
     terms: str
 
 app = FastAPI()
+
+# add CORS support for hosting purposes
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 books_api_base_url = "https://www.googleapis.com/books/v1/"
 
