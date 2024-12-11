@@ -21,7 +21,7 @@ export default function Listing({ result }: { result: Result }): ReactNode {
 
     return (
         <div className="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow">
-            <h3 className="text-lg font-semibold text-gray-800 pb-4">The Pragmatic Programmer</h3>
+            <h3 className="text-lg font-semibold text-gray-800 pb-4">{title}</h3>
             <img src={thumbnail} alt={`Book Cover - ${title}`} />
             <p className="text-gray-600 mt-2"><strong>Author(s):</strong> {authors ? authors.join(', ') : 'Author(s) not available.'}</p>
             <p className="text-gray-600 mt-2"><strong>Description:</strong> {description ? description : 'Description not available.'}</p>
