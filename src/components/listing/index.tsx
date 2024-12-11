@@ -16,18 +16,7 @@ export interface Result {
     }
 }
 
-// export interface BookDetails {
-//     authors: string;
-//     description: string;
-//     imageLinks: {
-//         smallThumbnail: string;
-//         thumbnail: string;
-//     }
-//     title: string;
-// }
-
 export default function Listing({ result }: { result: Result }): ReactNode {
-    console.log('<Listing result={result} />:\n', result);
     const { authors, description, imageLinks, title } = result.volumeInfo;
 
     return (
