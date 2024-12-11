@@ -18,8 +18,9 @@
     "name": "book-finder",
     "private": true,
     "scripts": {
-        "dev": "concurrently \"npm run next-dev\" \"npm run fastapi-dev\"",
         "build": "next build",
+        "dev": "concurrently \"npm run next-dev\" \"npm run fastapi-dev\"",
+        "export": "next export",
         "fastapi-dev": "(cd api && pip3 install -r requirements.txt && fastapi dev main.py)",
         "lint": "next lint",
         "next-dev": "next dev --turbopack",
