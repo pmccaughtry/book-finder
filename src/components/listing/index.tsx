@@ -17,7 +17,11 @@ export interface Result {
 
 export default function Listing({ result }: { result: Result }): ReactNode {
     const { authors, description, imageLinks, title } = result.volumeInfo;
-    const thumbnail = imageLinks?.thumbnail ? imageLinks.thumbnail : 'https://placehold.co/128x161?text=Image+Not+Found';
+    let thumbnail = imageLinks?.thumbnail ? imageLinks.thumbnail : 'https://placehold.co/128x161?text=Image+Not+Found';
+
+    if (process.env.NEXT_PUBLIC_NODE_ENV === 'production' && thumbnail.includes('http:')) {
+        thumbnail = thumbnail.replace('http:', 'https:');
+    }
 
     return (
         <div className="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow">
