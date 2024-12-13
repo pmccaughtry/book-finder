@@ -26,7 +26,10 @@ books_api_base_url = "https://www.googleapis.com/books/v1/"
 async def search_books(search_terms: SearchTerms):
     # Ensure search terms are URI encoded
     # Clients are expected to send encoded version of search terms: e.g., encodeURIComponent('search+terms')
-    if ("+" in search_terms.terms or " " in search_terms.terms):
+    if (" " in search_terms.terms):
+        search_terms.terms = search_terms.terms.replace(" ", "+")
+
+    if ("+" in search_terms.terms):
         search_terms.terms = quote(search_terms.terms)
 
     # search by volumes
