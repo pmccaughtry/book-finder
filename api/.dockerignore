@@ -1,0 +1,10 @@
+__pycache__
+.gitignore
+.pytest_cache
+.venv
+.vscode
+Dockerfile
+README.md
+amplify*
+src
+tests
