@@ -38,7 +38,7 @@ async def search_books(search_terms: SearchTerms):
 
     if response.status_code == 200:
         try:
-            # The items array contains a list objects with pertanent search results
+            # The items array contains a list objects with pertinent search results
             return response.json()["items"]
         except requests.exceptions.JSONDecodeError:
             return {
