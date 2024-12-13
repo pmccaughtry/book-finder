@@ -52,7 +52,7 @@ pnpm dev
 bun dev
 ```
 
-### Application Hosts
+### Application Hosts (Development environment)
 > Client: localhost:3000
 >
 > API: localhost:8000
@@ -64,7 +64,7 @@ bun dev
 
 **/health-details** returns details about uptime, cpu, and virtual memory
 
-There is also a **catch-all** route to gracefully handle any non-existant routes, returning a 200 to mess with bots, bad actors, etc
+There is also a **catch-all** route to gracefully handle any non-existent routes, returning a 200 to mess with bots, bad actors, etc
 
 
 ### Disclosure
