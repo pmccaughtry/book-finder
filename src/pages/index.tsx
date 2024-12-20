@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import Listings from '@/components/listings';
 import { type Result } from '@/components/listing';
+import { escape } from 'validator';
 
 type RequestHeaders = {
     [key: string]: string;
@@ -44,7 +45,9 @@ const Home: React.FC = () => {
             e.preventDefault();
             e.persist && e.persist();
 
-            const terms = encodeURIComponent(searchTerms.trim().replaceAll(' ', '+'));
+            let terms = escape(searchTerms);
+            terms = encodeURIComponent(terms.trim().replaceAll(' ', '+'));
+
             const baseApiUrl = process.env.NEXT_PUBLIC_NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_PRODUCTION_API_URL : process.env.NEXT_PUBLIC_DEVELOPMENT_API_URL
             const response = await fetch(`${baseApiUrl}/books`, fetchParams({terms}, 'POST'));
             const results = await response.json();
