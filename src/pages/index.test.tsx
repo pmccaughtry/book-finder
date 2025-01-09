@@ -5,11 +5,6 @@ import { escape } from 'validator';
 import type { Result } from '@/components/listing';
 import fetchMock from 'jest-fetch-mock';
 
-// // Mocking the fetch function
-global.fetch = jest.fn();
-// global.Response = Response ?? class Response {};
-
-// const mockFetch = global.fetch as jest.Mock;
 const mockFetch = jest.spyOn(global, 'fetch');
 
 describe('Home Component', () => {
@@ -46,15 +41,6 @@ describe('Home Component', () => {
                 }
             }
         ];
-
-        // mockFetch.mockResolvedValueOnce(
-        //     new Response(JSON.stringify(mockResults), {
-        //         status: 200,
-        //         headers: {
-        //             'Content-Type': 'application/json'
-        //         }
-        //     })
-        // );
 
         fetchMock.mockResponse(
             JSON.stringify(mockResults),
