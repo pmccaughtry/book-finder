@@ -6,6 +6,9 @@
         "validator": "^13.12.0"
     },
     "devDependencies": {
+        "@testing-library/jest-dom": "^6.6.3",
+        "@testing-library/react": "^16.1.0",
+        "@types/jest": "^29.5.14",
         "@types/node": "^20",
         "@types/react": "^19",
         "@types/react-dom": "^19",
@@ -13,8 +16,13 @@
         "concurrently": "^9.1.0",
         "eslint": "^8",
         "eslint-config-next": "15.0.4",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "jest-fetch-mock": "^3.0.3",
+        "jsdom": "^26.0.0",
         "postcss": "^8",
         "tailwindcss": "^3.4.1",
+        "ts-jest": "^29.2.5",
         "typescript": "^5"
     },
     "name": "book-finder",
@@ -26,7 +34,8 @@
         "fastapi-dev": "(cd api && pip3 install -r requirements.txt && fastapi dev main.py)",
         "lint": "next lint",
         "next-dev": "next dev --turbopack",
-        "start": "next start"
+        "start": "next start",
+        "test": "jest"
     },
     "version": "0.1.0"
 }
