@@ -11,7 +11,6 @@ export interface Result {
         };
         subtitle: string;
         title: string;
-        [prop: string]: any;
     }
 }
 
