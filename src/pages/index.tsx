@@ -106,7 +106,7 @@ const Home: React.FC = () => {
                 <div className="flex flex-col items-center space-y-6">
                     <div className="w-full max-w-2xl">
                         <div className="relative">
-                            <form onSubmit={handleSubmit}>
+                            <form name="book_search" onSubmit={handleSubmit} role="form">
                                 <input
                                     type="text"
                                     placeholder="Enter book title, author, or ISBN"
