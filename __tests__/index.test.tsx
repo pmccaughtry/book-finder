@@ -1,8 +1,8 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import Home from '@/pages/index';
-import Listings from '@/components/listings';
+import Home from '../src/pages/index';
+import Listings from '../src/components/listings';
 import { escape } from 'validator';
-import type { Result } from '@/components/listing';
+import type { Result } from '../src/components/listing';
 import fetchMock from 'jest-fetch-mock';
 
 const mockFetch = jest.spyOn(global, 'fetch');
